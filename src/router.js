@@ -52,7 +52,7 @@ const routes=[
         component: login
     },
     {
-        path: "./HomePage",
+        path: "/HomePage",
         component: HomePage
     },
     // 重定向
