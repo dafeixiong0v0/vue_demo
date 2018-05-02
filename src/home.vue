@@ -119,7 +119,7 @@ export default {};
         left: -100%;
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 52, 52,0.1);
+        background-color: rgba(104, 1, 1, 0.1);
         transition: all 1s;
         border-radius: 100%;
         z-index: 1;
