@@ -13,6 +13,7 @@
         <logina v-on:increment="incrementTotal" :aa='totala'></logina>
         {{totala}}
         {{$route.path}}
+        <nav-botton></nav-botton>
     </div>
 </template>
 <script>
@@ -34,7 +35,7 @@
                 total:0
             }
         },
-        mounted:{
+        mounted(){
             
         },
         methods:{
@@ -52,3 +53,10 @@
         }
     }
 </script>
+<style lang="less" scoped>
+    .up{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+</style>

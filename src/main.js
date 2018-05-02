@@ -4,7 +4,9 @@ import router from "./router.js"
 import './assets/js/taobaoflex.js'
 import './assets/js/flexible_css'
 import "./assets/css/index.css"
+import NavBotton from '../src/components/nav/nav.vue';
 
+Vue.component('NavBotton',NavBotton)
 // 开启错误提示
 Vue.config.debug = true;
 new Vue({

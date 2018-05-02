@@ -52,7 +52,7 @@ export default {
       this.$router.path({ path: "home" });
     }
   },
-  mounted:{
+  mounted(){
     
   }
 };

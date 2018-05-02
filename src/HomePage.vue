@@ -1,21 +1,46 @@
 <template>
-    <div>
-        <div>这是首页啊！！！！</div>
+    <div class="home">
+        <div :is='prop'>
+
+        </div>
+        <!-- <div>这是首页啊！！！！</div> -->
+        <nav-botton v-on:increment="po"></nav-botton>
     </div>
 </template>
 <script>
+    import com from './com'
+    import user from './user'
+    import about from './about'
+    import ceshi from './ceshi'
+    import App from './App'
+    import home from './home'
     export default{
+        components:{
+            com,home,App,ceshi,about,user
+        },
+        
         data(){
             return{
-
+                prop:'com'
             }
         },
-        mounted(){
-            alert(111);
+        methods:{
+            po(data){
+                console.log(data)
+                this.prop=data
+            }
         },
-        methods(){
-
+        mounted:function(){
+            console.log(121212)
         }
 
     }
 </script>
+<style lang="less" scoped>
+    .home{
+        width: 100%;
+        height: 100%;
+        border: 1px solid #e6e6e6;
+        box-sizing: border-box;
+    }
+</style>

@@ -3,7 +3,7 @@
         <h1>User</h1>
         <!-- <div>我是user组件{{msg+'****'}}{{fun}}</div> -->
         <div>我是user组件{{'****'}}{{fun?fun:funa}}</div>
-        
+        <nav-botton></nav-botton>
     </div>
 </template>
 <script>
