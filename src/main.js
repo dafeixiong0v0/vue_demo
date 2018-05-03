@@ -5,8 +5,10 @@ import './assets/js/taobaoflex.js'
 import './assets/js/flexible_css'
 import "./assets/css/index.css"
 import NavBotton from '../src/components/nav/nav.vue';
-
-Vue.component('NavBotton',NavBotton)
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
+Vue.component('icon',Icon);
+Vue.component('NavBotton',NavBotton);
 // 开启错误提示
 Vue.config.debug = true;
 new Vue({

@@ -40,7 +40,7 @@
     .home{
         width: 100%;
         height: 100%;
-        border: 1px solid #e6e6e6;
+        // border: 1px solid #e6e6e6;
         box-sizing: border-box;
     }
 </style>

@@ -33,53 +33,63 @@
         <div class="box_flex">
             <div class="ab">
                 <div>
-                    45
+                    <icon name="user" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
             <div class="ab">
                 <div>
-                    45
+                    <icon name="th-large" color="#FFF"></icon>
                 </div>
+                <div>操作员管理</div>
             </div>
 
         </div>
@@ -107,10 +117,29 @@ export default {};
       position: relative;
       overflow: hidden;
       z-index: 2;
-      div {
-        width: 100%;
-        height: 100%;
+      div:nth-child(1) {
+        width: 2rem;
+        height: 2rem;
         z-index: 999;
+        margin: 0 auto;
+        border-radius: 100%;
+        background-color: #31495d;
+        text-align: center;
+        line-height: 2.7rem;
+        margin-top: 0.4rem;
+        .fa-icon {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+      div:nth-of-type(2){
+        width: 100%;
+        height: 16px;
+        line-height: 16px;
+        display: block;
+        color: #31495D;
+        margin-top: 0.1rem;
+        // background-color: #000;
       }
       &:after {
         content: "";
