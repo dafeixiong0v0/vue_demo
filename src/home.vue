@@ -30,8 +30,9 @@
 -->
 <template>
     <div class="home">
+        <topheader title='FCARD云系统手机版'></topheader>
         <div class="box_flex">
-            <div class="ab">
+            <div class="ab" @click='tonextpage'>
                 <div>
                     <icon name="user" color="#FFF"></icon>
                 </div>
@@ -96,7 +97,22 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+    data(){
+        return{}
+    },
+    mounted:function(){
+        this.$store.state.path=this.$route.path;
+        console.log( this.$store.state.path);
+    },
+    methods:{
+        tonextpage:function(){
+            let that=this;
+            setTimeout(()=>{that.$router.push({path:'/operator'})},450)
+            
+        }
+    }
+};
 </script>
 <style lang="less" scoped>
 .home {
@@ -104,6 +120,16 @@ export default {};
   height: 100%;
   padding-bottom: 50px;
   box-sizing: border-box;
+  padding-bottom: 55px;
+  h3{
+      width: 10rem;
+      height: 1.2rem;
+      text-align: center;
+      line-height: 1.2rem;
+      font-size: 0.6rem;
+      color: #fff;
+      background-color: #42464F;
+  }
   .box_flex {
     display: flex;
     flex-direction: row;

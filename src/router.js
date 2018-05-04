@@ -9,7 +9,10 @@ import login from "./login"
 import aabb from "./ceshi"
 import logindl from "./login/login.vue"
 import HomePage from "./HomePage.vue"
+import posion from './posion/index.vue'
+import operator from './operator/index.vue'
 // 要告诉 vue 使用 vueRouter
+
 Vue.prototype.$goRoute = function () {
     this.$router.push({ path: "home" })
 }
@@ -29,6 +32,14 @@ const routes=[
     {
         path:"/home",
         component: home
+    },
+    {
+        path:"/operator",
+        component: operator
+    },
+    {
+        path:"/posion",
+        component: posion
     },
     {
         path:"/login/login",
@@ -68,6 +79,9 @@ const routes=[
     // }
 ]
 var router =  new VueRouter({
-    routes
+    routes:routes
 })
+// router.beforeEach((to,from,next)=>{
+//     console.log(to,from)
+// })
 export default router;

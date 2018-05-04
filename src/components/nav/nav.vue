@@ -1,13 +1,13 @@
 <template>
-    <div class="nav">
+    <div v-show="($store.state.path=='/home'||$store.state.path=='/posion')" class="nav">
         <div class="nav_box">
             <div class="box" @click="ta('home')">
                 <icon name="home" :color="counter=='home'?'#fff':'#0088CC'"></icon>
                 <p :style="counter=='home'?'color:#fff':'color:#0088CC'">首页</p>
             </div>
-            <div class="box" @click="ta('about')">
-                <icon name="user" :color="counter=='about'?'#fff':'#0088CC'" ></icon>
-                <p :style="counter=='about'?'color:#fff':'color:#0088CC'">个人中心</p>
+            <div class="box" @click="ta('posion')">
+                <icon name="user" :color="counter=='posion'?'#fff':'#0088CC'"></icon>
+                <p :style="counter=='posion'?'color:#fff':'color:#0088CC'">个人中心</p>
             </div>
             <!-- <div class="box"  @click="ta('user')">
                 <img>
@@ -32,16 +32,21 @@
 export default {
   data() {
     return {
-        counter:''
+      counter: "home",
+      path: ""
     };
   },
   methods: {
-      ta:function (ea) {
-          console.log(ea)
-          this.counter=ea;
-          let ab=ea
-          this.$emit('increment',ab);
-       }
+    ta: function(ea) {
+      console.log(ea);
+      this.counter = ea;
+      let ab = ea;
+      this.$router.push({path:ab})
+      this.$emit("increment", ab);
+    }
+  },
+  mounted: function() {
+    this.path = this.$route.path;
   }
 };
 </script>
@@ -57,7 +62,7 @@ export default {
   margin: 0 auto;
   padding: 6px 0;
   box-sizing: border-box;
-  background-color: #42464F;
+  background-color: #42464f;
   .nav_box {
     display: flex;
     width: 100%;
@@ -71,15 +76,15 @@ export default {
       height: 100%;
       text-align: center;
 
-      .fa-icon{
-          width: 30px;
-          height: 30px;
-          display: inline-block;
-          padding: 0;
-          margin: 0;
+      .fa-icon {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
       }
-      p{
-          height: 15px;
+      p {
+        height: 15px;
       }
     }
   }

@@ -41,6 +41,10 @@
         },
         watch:{
             
+        },
+        mounted:function(){
+            this.$store.state.path=this.$route.path;
+            console.log( this.$store.state.path);
         }
     }
 </script>
@@ -102,7 +106,6 @@
                 }
             }
             .DL_foot{
-                
                 min-height: 3rem;
                 width: 90%;
                 margin: auto;
@@ -134,9 +137,9 @@
                     display: inline-block;
                     padding: 0.08rem 0.16rem;
                     margin-bottom: 0;
-                    font-size: 0.1867rem;
+                    font-size: 0.3867rem;
                     font-weight: 400;
-                    line-height: 1.42857143;
+                    line-height: 2.42857143;
                     text-align: center;
                     white-space: nowrap;
                     vertical-align: middle;

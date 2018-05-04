@@ -31,7 +31,9 @@
             }
         },
         mounted:function(){
-            console.log(121212)
+            console.log(121212);
+            // 我是全局变量=1;
+            // console.log('我是全局变量:'+我是全局变量)
         }
 
     }
