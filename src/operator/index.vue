@@ -36,14 +36,18 @@ export default {
     };
   },
   mounted:function(){
-      this.$http.post('http://localhost:802/WebUI/Consume/Consume_property.html')
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.log(err);
-        });
+    this.$http.get('/user', {
+    params: {
+      ID: 12345
     }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (response) {
+    console.log(response);
+  });
+  }
 };
 </script>
 <style lang="less" scoped>

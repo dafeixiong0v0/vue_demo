@@ -16,7 +16,7 @@ console.log(store)
 Vue.component('icon',Icon);
 Vue.component('NavBotton',NavBotton);
 Vue.component('topheader',topheader);
-Vue.prototype.$http = axios
+Vue.prototype.$http = axios;
 // 开启错误提示
 Vue.config.debug = true;
 
