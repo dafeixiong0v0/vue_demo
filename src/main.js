@@ -3,6 +3,8 @@ import tt from './test.vue'
 import router from "./router.js"
 import store from './vuex/index.js'
 import Vuex from 'vuex'
+import axios from 'axios'
+
 import './assets/js/taobaoflex.js'
 import './assets/js/flexible_css'
 import "./assets/css/index.css"
@@ -14,6 +16,7 @@ console.log(store)
 Vue.component('icon',Icon);
 Vue.component('NavBotton',NavBotton);
 Vue.component('topheader',topheader);
+Vue.prototype.$http = axios
 // 开启错误提示
 Vue.config.debug = true;
 

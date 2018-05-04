@@ -1,69 +1,95 @@
 <template>
     <div class="home">
         <topheader :title='title'></topheader>
-        <div class="personal-center tab">
-            <div class="person-info">
-                <img class="pic" src="">
-                <div class="person-ele">
-                    <p>帐套：
-                        <span id="CustomerNameS">套账1</span>
-                    </p>
-                    <p>操作员：
-                        <span id="UserNameS">SYSTEM</span>
-                    </p>
-                    <p>登录时间：
-                        <span id="LoginTimeS">2018-05-04 11:00:26</span>
-                    </p>
-                </div>
-            </div>
-            <div class="person-info-other">
-                <ul>
-                    <li id="toHelpDoc">帮助</li>
-                    <li id="change-password">修改密码</li>
-                    <li id="find-back-pw">找回密码</li>
-                    <li id="out-login">退出登录</li>
-                </ul>
-            </div>
-        </div>
+        <ul>
+            <li class="listLi" v-for="item in items"> 
+                <a href="#">
+                    <icon :name='item.icon'></icon>
+                    <div class="titleBox">
+                        <h5>{{item.title}}</h5>
+                        <i>{{item.conten}}</i>
+                    </div>
+                    <!-- <span class="enterBtn"></span> -->
+                    <icon name='angle-right' class="enterBtn"></icon>
+                </a>
+            </li>
+        </ul>
     </div>
 </template>
 <script>
 export default {
-    data(){
-        return {
-            title:'操作员管理'
+  data() {
+    return {
+      title: "操作员管理",
+      items: [
+        {
+          title: "操作员列表",
+          conten: "此页面可添加删除修改操作员",
+          icon: "users"
+        },
+        {
+          title: "操作员日志",
+          conten: "此页面显示操作员操作日志",
+          icon: "file"
         }
+      ]
+    };
+  },
+  mounted:function(){
+      this.$http.post('http://localhost:802/WebUI/Consume/Consume_property.html')
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }
-    
 };
 </script>
 <style lang="less" scoped>
-.person-info {
-  padding: 0.0667rem 0.1333rem 0.1333rem 2.66666rem;
-  position: relative;
-  border-bottom: 0.0133rem solid #e7e7e7;
-  min-height: 1.2rem;
-  .pic {
-    width: 2.0667rem;
-    height: 2.0667rem;
-    position: absolute;
-    top: 0.4rem;
-    left: 0.2333rem;
-    border: 0.0133rem solid #e7e7e7;
-    border-radius: 2.6667rem;
-    overflow: hidden;
-  }
-  .person-ele p {
-    height: 0.9rem;
-    line-height: 0.9rem;
+li.listLi {
+  width: 100%;
+  height: 2.1333rem;
+  border-bottom: 0.0133rem solid #eee;
+  box-sizing: border-box;
+  a {
+    display: block;
+    color: rgb(50, 73, 92);
+    height: 100%;
   }
 }
-.person-info-other ul li {
-    border-bottom: 0.0133rem solid #e7e7e7;
-    padding: 0.2133rem 0.8rem 0.2133rem 0.4rem;
-    // background: url(../images/go.png) no-repeat;
-    background-size: 0.4267rem;
-    background-position: 99.2% center;
-    color: #42464F;
+.fa-icon {
+  width: 1.8667rem;
+  height: 1.8667rem;
+  padding: 0.4rem;
+  float: left;
+  background: white;
+  box-sizing: border-box;
+}
+.titleBox {
+  float: left;
+  height: 100%;
+  padding: 0.1333rem;
+  box-sizing: border-box;
+}
+.enterBtn {
+  // background: url(/WebUI/images/go.png) no-repeat center;
+  float: right;
+  width: 0.2rem;
+  height: 100%;
+  padding: 0;
+  margin-right: 0.3rem;
+  background-color: #fff;
+}
+.titleBox h5 {
+  font-weight: 700;
+  height: 1.0667rem;
+  line-height: 1.0667rem;
+  font-size: 0.4267rem;
+}
+.titleBox i {
+  color: #adacac;
+  font-style: normal;
+  font-size: 0.32rem;
 }
 </style>
