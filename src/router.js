@@ -11,6 +11,7 @@ import logindl from "./login/login.vue"
 import HomePage from "./HomePage.vue"
 import posion from './posion/index.vue'
 import operator from './operator/index.vue'
+import indexlist from './operator/list/indexlist.vue'
 // 要告诉 vue 使用 vueRouter
 
 Vue.prototype.$goRoute = function () {
@@ -36,6 +37,10 @@ const routes=[
     {
         path:"/operator",
         component: operator
+    },
+    {
+        path:"/operator/indexlist",
+        component: indexlist
     },
     {
         path:"/posion",

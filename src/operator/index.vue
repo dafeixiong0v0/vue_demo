@@ -3,7 +3,7 @@
     <topheader :title='title'></topheader>
     <ul>
       <li class="listLi" v-for="item in items">
-        <a href="#">
+        <div class="box" @click.prevent='setnexttitle' :data-title='item.title' :data-link='item.link'>
           <icon :name='item.icon'></icon>
           <div class="titleBox">
             <h5>{{item.title}}</h5>
@@ -11,7 +11,7 @@
           </div>
           <!-- <span class="enterBtn"></span> -->
           <icon name='angle-right' class="enterBtn"></icon>
-        </a>
+        </div>
       </li>
     </ul>
   </div>
@@ -25,14 +25,17 @@ export default {
         {
           title: "操作员列表",
           conten: "此页面可添加删除修改操作员",
-          icon: "users"
+          icon: "users",
+          link:'indexlist'
         },
         {
           title: "操作员日志",
           conten: "此页面显示操作员操作日志",
-          icon: "file"
+          icon: "file",
+          link:'indexlist'
         }
-      ]
+      ],
+      nexttitle:''
     };
   },
   mounted: function() {
@@ -45,6 +48,17 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
+  },
+  methods:{
+    setnexttitle:function(ev){
+      // if (ev.target === ev.currentTarget) {
+          //从绑定目标触发
+          let e=event.currentTarget;
+          console.log(e.dataset.title)
+          this.$router.push({path:'/operator/indexlist',query:{title:e.dataset.title}})
+      // }
+      
+    }
   }
 };
 </script>
@@ -54,10 +68,11 @@ li.listLi {
   height: 2.1333rem;
   border-bottom: 0.0133rem solid #eee;
   box-sizing: border-box;
-  a {
+  .box {
     display: block;
     color: rgb(50, 73, 92);
     height: 100%;
+    cursor: pointer;
   }
 }
 .fa-icon {
