@@ -39,7 +39,7 @@ export default {
     };
   },
   mounted: function() {
-    this.$http
+    this.$axios
       .post("WebUI/WebAPI/ClientUser/GetLoginUser"
       )
       .then(function(response) {
