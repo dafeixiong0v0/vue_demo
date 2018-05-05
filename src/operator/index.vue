@@ -1,20 +1,20 @@
 <template>
-    <div class="home">
-        <topheader :title='title'></topheader>
-        <ul>
-            <li class="listLi" v-for="item in items"> 
-                <a href="#">
-                    <icon :name='item.icon'></icon>
-                    <div class="titleBox">
-                        <h5>{{item.title}}</h5>
-                        <i>{{item.conten}}</i>
-                    </div>
-                    <!-- <span class="enterBtn"></span> -->
-                    <icon name='angle-right' class="enterBtn"></icon>
-                </a>
-            </li>
-        </ul>
-    </div>
+  <div class="home">
+    <topheader :title='title'></topheader>
+    <ul>
+      <li class="listLi" v-for="item in items">
+        <a href="#">
+          <icon :name='item.icon'></icon>
+          <div class="titleBox">
+            <h5>{{item.title}}</h5>
+            <i>{{item.conten}}</i>
+          </div>
+          <!-- <span class="enterBtn"></span> -->
+          <icon name='angle-right' class="enterBtn"></icon>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
@@ -35,18 +35,16 @@ export default {
       ]
     };
   },
-  mounted:function(){
-    this.$http.get('/user', {
-    params: {
-      ID: 12345
-    }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (response) {
-    console.log(response);
-  });
+  mounted: function() {
+    this.$http
+      .post("WebUI/WebAPI/ClientUser/GetLoginUser"
+      )
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 };
 </script>

@@ -52,7 +52,7 @@
     .big{
         width: 100%;
         height: 100%;
-        background-image: url(../assets/loginimg/plogin.jpg);
+        background-image: url('./../static/image/loginimg/plogin.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position:  center; 
